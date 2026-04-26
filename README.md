@@ -1,2 +1,5 @@
-app/page.tsx - Thêm màu mới vào vehiclesData với image trỏ đến file ảnh tương ứng
-public/images/ - Thêm file ảnh mới (hoặc dùng ảnh hiện có)
+| Mục đích | File cần sửa |
+|---|---|
+| Thêm màu mới + đường dẫn ảnh | `app/page.tsx` |
+| Thêm ảnh vật lý | `public/images/` |
+| Chỉnh UI phần chọn màu | `components/byd/hero-section.tsx` |
