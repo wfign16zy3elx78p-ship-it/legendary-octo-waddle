@@ -8,11 +8,6 @@ interface HeaderProps {
 }
 
 const navItems = [
-  { id: "intro", label: "Giới thiệu" },
-  { id: "colors", label: "Màu sắc" },
-  { id: "exterior", label: "Ngoại thất" },
-  { id: "interior", label: "Nội thất" },
-  { id: "specs", label: "Thông số" },
 ]
 
 export function Header({ activeSection, onSectionChange }: HeaderProps) {

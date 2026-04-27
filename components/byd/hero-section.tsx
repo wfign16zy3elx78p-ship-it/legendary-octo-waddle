@@ -27,9 +27,10 @@ interface HeroSectionProps {
   colors: CarColor[]
   selectedColor: CarColor
   onColorChange: (color: CarColor) => void
+  onViewInfo: () => void
 }
 
-export function HeroSection({ vehicle, colors, selectedColor, onColorChange }: HeroSectionProps) {
+export function HeroSection({ vehicle, colors, selectedColor, onColorChange, onViewInfo }: HeroSectionProps) {
   const [isImageLoading, setIsImageLoading] = useState(false)
   const [isVehicleChanging, setIsVehicleChanging] = useState(false)
   const [prevVehicleId, setPrevVehicleId] = useState(vehicle.id)
@@ -127,6 +128,7 @@ export function HeroSection({ vehicle, colors, selectedColor, onColorChange }: H
 
           {/* CTA Button */}
           <button 
+            onClick={onViewInfo}
             className={`group relative mb-10 w-fit overflow-hidden rounded-full glass-button px-8 py-4 text-sm font-medium text-white transition-all duration-500 delay-150 active:scale-95 glow-blue-hover ${
               isVehicleChanging ? "translate-y-4 opacity-0" : "translate-y-0 opacity-100"
             }`}
