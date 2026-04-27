@@ -5,7 +5,7 @@ import './globals.css'
 
 const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
-
+//mèo béo
 export const metadata: Metadata = {
   title: 'BYD Atto 3 | Xe điện thông minh',
   description: 'Khám phá BYD Atto 3 - SUV điện thông minh với quãng đường 420km, thiết kế hiện đại và công nghệ tiên tiến.',
