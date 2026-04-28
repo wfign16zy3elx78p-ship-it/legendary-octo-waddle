@@ -4,107 +4,111 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Dark Liquid Glass Color Palette */
-  --background: #000000;
-  --foreground: #FFFFFF;
-  --card: rgba(255, 255, 255, 0.05);
-  --card-foreground: #FFFFFF;
-  --popover: rgba(255, 255, 255, 0.08);
-  --popover-foreground: #FFFFFF;
-  /* Accent Blue - Primary CTA */
-  --primary: #0A84FF;
-  --primary-foreground: #FFFFFF;
-  /* Glass surfaces */
-  --secondary: rgba(255, 255, 255, 0.06);
-  --secondary-foreground: rgba(255, 255, 255, 0.9);
-  /* Muted */
+  /* BYD Digital Experience — Design System Tokens */
+  --canvas: #0a0b12;
+  --foreground: #ffffff;
+
+  /* Brand & Accent */
+  --accent-tech: #0088ff;
+  --accent-glow: #00c6ff;
+  --text-primary: #ffffff;
+  --text-secondary: #a0a6b8;
+  --text-disabled: #4a5068;
+
+  /* Surface */
+  --surface-glass: rgba(16, 18, 26, 0.6);
+  --surface-elevated: rgba(24, 26, 36, 0.8);
+  --surface-pressed: rgba(0, 136, 255, 0.12);
+  --stroke-light: rgba(255, 255, 255, 0.08);
+
+  /* Semantic */
+  --status-success: #00c853;
+  --status-warning: #ffb300;
+  --status-error: #ff5252;
+
+  /* shadcn/ui compatibility remapping */
+  --background: var(--canvas);
+  --card: var(--surface-glass);
+  --card-foreground: var(--text-primary);
+  --popover: var(--surface-elevated);
+  --popover-foreground: var(--text-primary);
+  --primary: var(--accent-tech);
+  --primary-foreground: #ffffff;
+  --secondary: var(--surface-glass);
+  --secondary-foreground: var(--text-primary);
   --muted: rgba(255, 255, 255, 0.04);
-  --muted-foreground: rgba(255, 255, 255, 0.5);
-  /* Accent */
-  --accent: rgba(255, 255, 255, 0.08);
-  --accent-foreground: #FFFFFF;
-  --destructive: #FF453A;
-  --destructive-foreground: #FFFFFF;
-  /* Borders - Glass effect */
-  --border: rgba(255, 255, 255, 0.1);
+  --muted-foreground: var(--text-secondary);
+  --accent: var(--surface-pressed);
+  --accent-foreground: var(--text-primary);
+  --destructive: var(--status-error);
+  --destructive-foreground: #ffffff;
+  --border: var(--stroke-light);
   --input: rgba(255, 255, 255, 0.08);
-  --ring: #0A84FF;
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
+  --ring: var(--accent-tech);
+
   --radius: 1rem;
-  /* Sidebar - Glass panel */
-  --sidebar: rgba(255, 255, 255, 0.03);
-  --sidebar-foreground: #FFFFFF;
-  --sidebar-primary: #0A84FF;
-  --sidebar-primary-foreground: #FFFFFF;
-  --sidebar-accent: rgba(255, 255, 255, 0.08);
-  --sidebar-accent-foreground: #FFFFFF;
-  --sidebar-border: rgba(255, 255, 255, 0.1);
-  --sidebar-ring: #0A84FF;
-  /* Custom colors */
-  --carbon-dark: #FFFFFF;
-  --graphite: rgba(255, 255, 255, 0.7);
-  --pewter: rgba(255, 255, 255, 0.5);
-  --silver-fog: rgba(255, 255, 255, 0.4);
-  --cloud-gray: rgba(255, 255, 255, 0.1);
-  --electric-blue: #0A84FF;
-  /* Glass effect variables */
-  --glass-bg: rgba(255, 255, 255, 0.05);
-  --glass-border: rgba(255, 255, 255, 0.1);
-  --glass-blur: 20px;
+
+  /* Sidebar */
+  --sidebar: rgba(16, 18, 26, 0.6);
+  --sidebar-foreground: var(--text-primary);
+  --sidebar-primary: var(--accent-tech);
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: var(--surface-pressed);
+  --sidebar-accent-foreground: var(--text-primary);
+  --sidebar-border: var(--stroke-light);
+  --sidebar-ring: var(--accent-tech);
 }
 
 .dark {
-  --background: #000000;
-  --foreground: #FFFFFF;
-  --card: rgba(255, 255, 255, 0.05);
-  --card-foreground: #FFFFFF;
-  --popover: rgba(255, 255, 255, 0.08);
-  --popover-foreground: #FFFFFF;
-  --primary: #0A84FF;
-  --primary-foreground: #FFFFFF;
-  --secondary: rgba(255, 255, 255, 0.06);
-  --secondary-foreground: rgba(255, 255, 255, 0.9);
+  --background: var(--canvas);
+  --foreground: var(--text-primary);
+  --card: var(--surface-glass);
+  --card-foreground: var(--text-primary);
+  --popover: var(--surface-elevated);
+  --popover-foreground: var(--text-primary);
+  --primary: var(--accent-tech);
+  --primary-foreground: #ffffff;
+  --secondary: var(--surface-glass);
+  --secondary-foreground: var(--text-primary);
   --muted: rgba(255, 255, 255, 0.04);
-  --muted-foreground: rgba(255, 255, 255, 0.5);
-  --accent: rgba(255, 255, 255, 0.08);
-  --accent-foreground: #FFFFFF;
-  --destructive: #FF453A;
-  --destructive-foreground: #FFFFFF;
-  --border: rgba(255, 255, 255, 0.1);
+  --muted-foreground: var(--text-secondary);
+  --accent: var(--surface-pressed);
+  --accent-foreground: var(--text-primary);
+  --destructive: var(--status-error);
+  --destructive-foreground: #ffffff;
+  --border: var(--stroke-light);
   --input: rgba(255, 255, 255, 0.08);
-  --ring: #0A84FF;
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: rgba(255, 255, 255, 0.03);
-  --sidebar-foreground: #FFFFFF;
-  --sidebar-primary: #0A84FF;
-  --sidebar-primary-foreground: #FFFFFF;
-  --sidebar-accent: rgba(255, 255, 255, 0.08);
-  --sidebar-accent-foreground: #FFFFFF;
-  --sidebar-border: rgba(255, 255, 255, 0.1);
-  --sidebar-ring: #0A84FF;
+  --ring: var(--accent-tech);
+  --sidebar: rgba(16, 18, 26, 0.6);
+  --sidebar-foreground: var(--text-primary);
+  --sidebar-primary: var(--accent-tech);
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: var(--surface-pressed);
+  --sidebar-accent-foreground: var(--text-primary);
+  --sidebar-border: var(--stroke-light);
+  --sidebar-ring: var(--accent-tech);
 }
 
 @theme inline {
-  --font-sans: 'SF Pro Display', 'Geist', 'Geist Fallback', -apple-system, Arial, sans-serif;
-  --font-mono: 'SF Mono', 'Geist Mono', 'Geist Mono Fallback';
-  /* Custom colors */
-  --color-carbon-dark: var(--carbon-dark);
-  --color-graphite: var(--graphite);
-  --color-pewter: var(--pewter);
-  --color-silver-fog: var(--silver-fog);
-  --color-cloud-gray: var(--cloud-gray);
-  --color-electric-blue: var(--electric-blue);
-  /* Glass effect colors */
-  --color-glass-bg: var(--glass-bg);
-  --color-glass-border: var(--glass-border);
+  --font-sans: 'Inter', 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'SF Mono', ui-monospace, monospace;
+
+  /* Design system colors */
+  --color-canvas: var(--canvas);
+  --color-accent-tech: var(--accent-tech);
+  --color-accent-glow: var(--accent-glow);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-disabled: var(--text-disabled);
+  --color-surface-glass: var(--surface-glass);
+  --color-surface-elevated: var(--surface-elevated);
+  --color-surface-pressed: var(--surface-pressed);
+  --color-stroke-light: var(--stroke-light);
+  --color-status-success: var(--status-success);
+  --color-status-warning: var(--status-warning);
+  --color-status-error: var(--status-error);
+
+  /* shadcn aliases */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -124,15 +128,10 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-pill: 9999px;
   --color-sidebar: var(--sidebar);
   --color-sidebar-foreground: var(--sidebar-foreground);
   --color-sidebar-primary: var(--sidebar-primary);
@@ -148,115 +147,76 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-canvas text-foreground antialiased;
   }
 }
 
-/* Liquid Glass Effects */
+/* =========================================================
+   BYD Design System — Glass Surfaces
+   ========================================================= */
+
 .glass {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(16, 18, 26, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .glass-card {
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.08) 0%,
-    rgba(255, 255, 255, 0.02) 100%
-  );
-  backdrop-filter: blur(24px) saturate(180%);
-  -webkit-backdrop-filter: blur(24px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 
-    0 8px 32px rgba(0, 0, 0, 0.4),
-    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  background: rgba(16, 18, 26, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .glass-button {
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.12) 0%,
-    rgba(255, 255, 255, 0.04) 100%
-  );
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 
-    0 4px 16px rgba(0, 0, 0, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 .glass-button:hover {
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.18) 0%,
-    rgba(255, 255, 255, 0.08) 100%
-  );
-  box-shadow: 
-    0 8px 24px rgba(0, 0, 0, 0.4),
-    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  background: rgba(0, 136, 255, 0.12);
 }
 
 .glass-sidebar {
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.06) 0%,
-    rgba(255, 255, 255, 0.02) 100%
-  );
-  backdrop-filter: blur(32px) saturate(200%);
-  -webkit-backdrop-filter: blur(32px) saturate(200%);
+  background: rgba(16, 18, 26, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-left: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 
-    -20px 0 60px rgba(0, 0, 0, 0.5),
-    inset 1px 0 0 rgba(255, 255, 255, 0.05);
 }
 
 .glass-nav {
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.08) 0%,
-    rgba(255, 255, 255, 0.04) 100%
-  );
-  backdrop-filter: blur(24px) saturate(180%);
-  -webkit-backdrop-filter: blur(24px) saturate(180%);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+  background: rgba(24, 26, 36, 0.8);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.4);
 }
 
-/* Glow effects */
+/* =========================================================
+   Glow & Depth
+   ========================================================= */
+
 .glow-blue {
-  box-shadow: 0 0 20px rgba(10, 132, 255, 0.4), 0 0 40px rgba(10, 132, 255, 0.2);
+  box-shadow: 0 0 20px rgba(0, 136, 255, 0.4), 0 0 40px rgba(0, 198, 255, 0.2);
 }
 
 .glow-blue-hover:hover {
-  box-shadow: 0 0 30px rgba(10, 132, 255, 0.5), 0 0 60px rgba(10, 132, 255, 0.3);
+  box-shadow: 0 0 30px rgba(0, 136, 255, 0.5), 0 0 60px rgba(0, 198, 255, 0.3);
 }
 
-/* Subtle animated gradient background */
-@keyframes gradient-shift {
-  0%, 100% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
+.glow-radial-canvas {
+  background: radial-gradient(ellipse at 30% 20%, rgba(0, 198, 255, 0.08) 0%, transparent 55%),
+              radial-gradient(ellipse at 70% 80%, rgba(0, 136, 255, 0.05) 0%, transparent 50%),
+              #0a0b12;
 }
 
-.bg-gradient-animate {
-  background: linear-gradient(
-    -45deg,
-    #000000,
-    #0a0a0a,
-    #050510,
-    #000005
-  );
-  background-size: 400% 400%;
-  animation: gradient-shift 15s ease infinite;
-}
+/* =========================================================
+   Scrollbars
+   ========================================================= */
 
-/* Minimal Scrollbar - Always visible but subtle */
 .scrollbar-minimal {
   scrollbar-width: thin;
   scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
@@ -287,50 +247,10 @@
 }
 
 .scrollbar-minimal::-webkit-scrollbar-thumb:active {
-  background: linear-gradient(180deg, rgba(10, 132, 255, 0.6) 0%, rgba(10, 132, 255, 0.4) 100%);
-  border-color: rgba(10, 132, 255, 0.3);
+  background: linear-gradient(180deg, rgba(0, 136, 255, 0.6) 0%, rgba(0, 136, 255, 0.4) 100%);
+  border-color: rgba(0, 136, 255, 0.3);
 }
 
-.scrollbar-minimal::-webkit-scrollbar-corner {
-  background: transparent;
-}
-
-/* Hide scrollbar - show on hover with animation */
-.scrollbar-hover-show {
-  scrollbar-width: thin;
-  scrollbar-color: transparent transparent;
-  overflow-y: auto !important;
-}
-
-.scrollbar-hover-show::-webkit-scrollbar {
-  width: 6px;
-}
-
-.scrollbar-hover-show::-webkit-scrollbar-track {
-  background: transparent;
-  border-radius: 10px;
-  margin: 12px 4px;
-}
-
-.scrollbar-hover-show::-webkit-scrollbar-thumb {
-  background: transparent;
-  border-radius: 10px;
-  transition: background 0.3s ease;
-}
-
-.scrollbar-hover-show:hover {
-  scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
-}
-
-.scrollbar-hover-show:hover::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.15) 100%);
-}
-
-.scrollbar-hover-show:hover::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.25) 100%);
-}
-
-/* Glass scrollbar style */
 .scrollbar-glass {
   scrollbar-width: thin;
   scrollbar-color: rgba(255, 255, 255, 0.15) rgba(255, 255, 255, 0.03);
@@ -363,14 +283,13 @@
 .scrollbar-glass::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(
     180deg,
-    rgba(10, 132, 255, 0.4) 0%,
-    rgba(10, 132, 255, 0.2) 50%,
-    rgba(10, 132, 255, 0.3) 100%
+    rgba(0, 136, 255, 0.4) 0%,
+    rgba(0, 136, 255, 0.2) 50%,
+    rgba(0, 136, 255, 0.3) 100%
   );
-  border-color: rgba(10, 132, 255, 0.3);
+  border-color: rgba(0, 136, 255, 0.3);
 }
 
-/* Scrollbar hide completely */
 .scrollbar-hide {
   scrollbar-width: none;
   -ms-overflow-style: none;
@@ -381,3 +300,20 @@
   height: 0;
   display: none;
 }
+
+/* =========================================================
+   Utilities
+   ========================================================= */
+
+.tracking-tight-hero {
+  letter-spacing: -0.5px;
+}
+
+.tracking-label {
+  letter-spacing: 1px;
+}
+
+.tracking-nav {
+  letter-spacing: 0.5px;
+}
+

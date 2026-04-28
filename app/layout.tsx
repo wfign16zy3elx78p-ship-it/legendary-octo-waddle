@@ -1,14 +1,17 @@
 import type { Metadata } from 'next'
-import { Geist, Geist_Mono } from 'next/font/google'
+import { Inter } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
-const _geist = Geist({ subsets: ["latin"] });
-const _geistMono = Geist_Mono({ subsets: ["latin"] });
+const inter = Inter({
+  subsets: ['latin', 'vietnamese'],
+  variable: '--font-inter',
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
-  title: 'BYD Atto 3 | Xe điện thông minh',
-  description: 'Khám phá BYD Atto 3 - SUV điện thông minh với quãng đường 420km, thiết kế hiện đại và công nghệ tiên tiến.',
+  title: 'BYD | Xe điện thông minh',
+  description: 'Khám phá dòng xe điện BYD – SUV thông minh với công nghệ tiên tiến, quãng đường dẫn đầu và thiết kế tương lai.',
   generator: 'v0.app',
   icons: {
     icon: [
@@ -35,11 +38,12 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="vi" className="bg-black">
-      <body className="font-sans antialiased bg-black text-white min-h-screen">
+    <html lang="vi" className="dark">
+      <body className={`${inter.variable} font-sans antialiased bg-canvas text-white min-h-screen`}>
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>
   )
 }
+

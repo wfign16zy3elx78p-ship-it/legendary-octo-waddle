@@ -131,7 +131,7 @@ export default function BYDLandingPage() {
   }
 
   return (
-    <main className="min-h-screen bg-background">
+    <main className="min-h-screen bg-canvas">
       <Header />
 
       <div className="lg:mr-64">

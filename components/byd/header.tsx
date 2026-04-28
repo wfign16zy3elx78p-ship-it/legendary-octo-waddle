@@ -7,18 +7,18 @@ export function Header() {
   const [activeNav, setActiveNav] = useState<string>("mau-xe")
 
   const navItems = [
-    { id: "mau-xe", label: "MẪU XE" },
-    { id: "cong-nghe", label: "CÔNG NGHỆ" },
-    { id: "trai-nghiem", label: "TRẢI NGHIỆM" },
-    { id: "ve-byd", label: "VỀ BYD" },
+    { id: "mau-xe", label: "Mẫu xe" },
+    { id: "cong-nghe", label: "Công nghệ" },
+    { id: "trai-nghiem", label: "Trải nghiệm" },
+    { id: "ve-byd", label: "Về BYD" },
   ]
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 glass-nav">
-      <div className="flex items-center justify-between px-6 py-4 lg:px-12">
+    <header className="fixed top-0 left-0 right-0 z-50 glass-nav h-16">
+      <div className="mx-auto flex h-full max-w-[1280px] items-center justify-between px-6 lg:px-12">
         {/* Logo */}
         <div className="flex items-center">
-          <span className="text-2xl font-bold tracking-tight text-white transition-all duration-300 hover:tracking-wide cursor-pointer hover:text-electric-blue">
+          <span className="text-2xl font-semibold tracking-tight-hero text-white transition-all duration-300 hover:tracking-normal cursor-pointer hover:text-accent-tech">
             BYD
           </span>
         </div>
@@ -29,11 +29,11 @@ export function Header() {
             <button
               key={item.id}
               onClick={() => setActiveNav(item.id)}
-              className="relative text-xs font-medium uppercase tracking-widest text-white/70 transition-all duration-300 hover:text-white group"
+              className="relative text-sm font-medium tracking-nav text-text-secondary transition-all duration-300 hover:text-white group"
             >
               {item.label}
               <span
-                className={`absolute bottom-0 left-0 h-0.5 bg-electric-blue transition-all duration-300 ${
+                className={`absolute -bottom-1 left-0 h-[2px] bg-accent-tech transition-all duration-300 ${
                   activeNav === item.id ? "w-full" : "w-0 group-hover:w-full"
                 }`}
               />
@@ -43,15 +43,16 @@ export function Header() {
 
         {/* Right Actions */}
         <div className="flex items-center gap-4">
-          <button className="group relative overflow-hidden rounded-full glass-button px-5 py-2.5 text-sm font-medium text-white transition-all duration-300 hover:shadow-lg active:scale-95 glow-blue-hover">
-            <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/10 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
+          <button className="group relative overflow-hidden rounded-full bg-gradient-to-r from-accent-tech to-[#005ecb] px-6 py-2.5 text-sm font-semibold tracking-nav text-white transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]">
+            <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 ease-out group-hover:translate-x-full" />
             <span className="relative">Đăng ký lái thử</span>
           </button>
-          <button className="group p-2 text-white/50 transition-all duration-300 hover:text-white active:scale-90">
-            <Download className="h-5 w-5 transition-transform duration-300 group-hover:translate-y-0.5" />
+          <button className="group flex h-10 w-10 items-center justify-center rounded-full glass text-white/50 transition-all duration-300 hover:text-white hover:scale-105 active:scale-95">
+            <Download className="h-5 w-5" />
           </button>
         </div>
       </div>
     </header>
   )
 }
+
