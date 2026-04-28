@@ -5,6 +5,7 @@ import { Header } from "@/components/byd/header"
 import { HeroSection } from "@/components/byd/hero-section"
 import { VehicleSidebar } from "@/components/byd/vehicle-sidebar"
 import { MobileVehicleNav } from "@/components/byd/mobile-vehicle-nav"
+import { FooterInfo } from "@/components/byd/footer-info"
 
 interface CarColor {
   id: string
@@ -153,6 +154,8 @@ export default function BYDLandingPage() {
         activeVehicle={activeVehicleId}
         onVehicleChange={handleVehicleChange}
       />
+
+      <FooterInfo />
     </main>
   )
 }

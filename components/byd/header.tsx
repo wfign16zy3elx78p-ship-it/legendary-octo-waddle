@@ -1,8 +1,18 @@
 "use client"
 
 import { Download } from "lucide-react"
+import { useState } from "react"
 
 export function Header() {
+  const [activeNav, setActiveNav] = useState<string>("mau-xe")
+
+  const navItems = [
+    { id: "mau-xe", label: "MẪU XE" },
+    { id: "cong-nghe", label: "CÔNG NGHỆ" },
+    { id: "trai-nghiem", label: "TRẢI NGHIỆM" },
+    { id: "ve-byd", label: "VỀ BYD" },
+  ]
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 glass-nav">
       <div className="flex items-center justify-between px-6 py-4 lg:px-12">
@@ -12,6 +22,24 @@ export function Header() {
             BYD
           </span>
         </div>
+
+        {/* Center Navigation */}
+        <nav className="hidden lg:flex items-center gap-8">
+          {navItems.map((item) => (
+            <button
+              key={item.id}
+              onClick={() => setActiveNav(item.id)}
+              className="relative text-xs font-medium uppercase tracking-widest text-white/70 transition-all duration-300 hover:text-white group"
+            >
+              {item.label}
+              <span
+                className={`absolute bottom-0 left-0 h-0.5 bg-electric-blue transition-all duration-300 ${
+                  activeNav === item.id ? "w-full" : "w-0 group-hover:w-full"
+                }`}
+              />
+            </button>
+          ))}
+        </nav>
 
         {/* Right Actions */}
         <div className="flex items-center gap-4">
