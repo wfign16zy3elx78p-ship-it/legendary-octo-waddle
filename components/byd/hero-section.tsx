@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image"
-import { Star, Zap, Battery, Zap as Lightning, Plug, Gauge, Shield } from "lucide-react"
+import { Star, Zap, Battery, Zap as Lightning, Plug, Shield } from "lucide-react"
 import { useState, useEffect } from "react"
 
 interface CarColor {
@@ -69,21 +69,17 @@ export function HeroSection({ vehicle, colors, selectedColor, onColorChange }: H
   }, [selectedColor.id])
 
   return (
-    <section className="relative min-h-screen bg-gradient-animate pt-20 overflow-hidden">
-      {/* Background glow effects */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-electric-blue/10 rounded-full blur-[120px] animate-pulse" />
-      <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-purple-500/10 rounded-full blur-[100px] animate-pulse" style={{ animationDelay: '1s' }} />
-      
-      <div className="relative flex min-h-[calc(100vh-5rem)] flex-col lg:flex-row">
+    <section className="relative min-h-screen pt-16 overflow-hidden glow-radial-canvas">
+      <div className="relative flex min-h-[calc(100vh-4rem)] flex-col lg:flex-row">
         {/* Left Content */}
         <div className="flex flex-1 flex-col justify-center px-6 py-12 lg:px-12 lg:py-0">
           {/* Badge */}
-          <span 
-            className={`mb-4 inline-flex items-center gap-2 text-xs font-medium uppercase tracking-widest text-white/50 transition-all duration-500 ${
+          <span
+            className={`mb-4 inline-flex items-center gap-2 text-xs font-medium uppercase tracking-label text-text-secondary transition-all duration-500 ${
               isVehicleChanging ? "translate-y-2 opacity-0" : "translate-y-0 opacity-100"
             }`}
           >
-            <Zap className="h-3 w-3 text-electric-blue" />
+            <Zap className="h-3 w-3 text-accent-tech" />
             Xe ô tô điện
           </span>
 
@@ -93,51 +89,51 @@ export function HeroSection({ vehicle, colors, selectedColor, onColorChange }: H
               isVehicleChanging ? "translate-y-4 opacity-0" : "translate-y-0 opacity-100"
             }`}
           >
-            <p className="text-lg font-medium text-white/60">{vehicle.year}</p>
-            <h1 className="text-5xl font-bold uppercase tracking-tight text-white lg:text-7xl">
+            <p className="text-lg font-normal text-text-secondary">{vehicle.year}</p>
+            <h1 className="mt-2 text-5xl font-semibold tracking-tight-hero text-white lg:text-[48px] leading-[1.1]">
               {vehicle.name}
             </h1>
-            <p className="mt-4 text-lg font-medium text-white/70">
-              NĂNG LƯỢNG XANH, CHO TƯƠNG LAI BẺN VỮNG
+            <p className="mt-4 text-lg font-normal text-text-secondary leading-relaxed">
+              Năng lượng xanh, cho tương lai bền vững
             </p>
           </div>
 
           {/* Color Name - Glass Card */}
-          <div 
-            className={`mb-8 inline-flex w-fit items-center gap-3 rounded-full glass-button px-5 py-2.5 transition-all duration-300 ${
+          <div
+            className={`mb-8 inline-flex w-fit items-center gap-3 rounded-full glass px-5 py-2.5 transition-all duration-300 ${
               isImageLoading ? "opacity-0 translate-x-2" : "opacity-100 translate-x-0"
             }`}
           >
-            <span 
-              className="h-4 w-4 rounded-full ring-2 ring-white/20" 
-              style={{ backgroundColor: selectedColor.hex }} 
+            <span
+              className="h-4 w-4 rounded-full ring-2 ring-white/20"
+              style={{ backgroundColor: selectedColor.hex }}
             />
             <span className="text-sm font-medium text-white">{selectedColor.name}</span>
-            <span className="text-sm text-white/50">{selectedColor.nameVi}</span>
+            <span className="text-sm text-text-secondary">{selectedColor.nameVi}</span>
           </div>
 
           {/* Stats - Glass Cards */}
-          <div 
+          <div
             className={`mb-8 flex gap-4 transition-all duration-500 delay-100 ${
               isVehicleChanging ? "translate-y-4 opacity-0" : "translate-y-0 opacity-100"
             }`}
           >
             <div className="glass-card rounded-2xl px-6 py-4">
-              <p className="text-2xl font-bold text-white lg:text-3xl">
+              <p className="text-2xl font-semibold text-white lg:text-3xl leading-tight">
                 {vehicle.priceFormatted}
               </p>
-              <p className="mt-1 text-xs font-medium uppercase tracking-wider text-white/40">
+              <p className="mt-1 text-xs font-medium uppercase tracking-label text-text-secondary">
                 Giá bán niêm yết
               </p>
             </div>
             <div className="glass-card rounded-2xl px-6 py-4">
               <div className="flex items-center gap-2">
-                <Battery className="h-5 w-5 text-green-400" />
-                <p className="text-2xl font-bold text-white lg:text-3xl">
+                <Battery className="h-5 w-5 text-status-success" />
+                <p className="text-2xl font-semibold text-white lg:text-3xl leading-tight">
                   {vehicle.range}
                 </p>
               </div>
-              <p className="mt-1 text-xs font-medium uppercase tracking-wider text-white/40">
+              <p className="mt-1 text-xs font-medium uppercase tracking-label text-text-secondary">
                 Quãng đường
               </p>
             </div>
@@ -149,9 +145,7 @@ export function HeroSection({ vehicle, colors, selectedColor, onColorChange }: H
               isVehicleChanging ? "translate-y-4 opacity-0" : "translate-y-0 opacity-100"
             }`}
           >
-            <button
-              className="group relative w-fit overflow-hidden rounded-full bg-electric-blue px-8 py-4 text-sm font-medium text-white transition-all duration-300 active:scale-95 shadow-lg shadow-electric-blue/50 hover:shadow-xl hover:shadow-electric-blue/60"
-            >
+            <button className="group relative overflow-hidden rounded-full bg-gradient-to-r from-accent-tech to-[#005ecb] px-8 py-3 text-sm font-semibold tracking-nav text-white transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]">
               <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 ease-out group-hover:translate-x-full" />
               <span className="relative flex items-center gap-2">
                 <span>Đặt lái thử ngay</span>
@@ -161,62 +155,59 @@ export function HeroSection({ vehicle, colors, selectedColor, onColorChange }: H
               </span>
             </button>
 
-            <button
-              className="group relative w-fit overflow-hidden rounded-full glass-button px-8 py-4 text-sm font-medium text-white transition-all duration-300 active:scale-95 border border-white/20 hover:border-white/40"
-            >
-              <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/10 to-transparent transition-transform duration-700 ease-out group-hover:translate-x-full" />
+            <button className="group relative overflow-hidden rounded-full glass-button px-8 py-3 text-sm font-semibold tracking-nav text-white transition-all duration-300 hover:bg-surface-pressed active:scale-[0.98]">
               <span className="relative">Khám phá xe</span>
             </button>
           </div>
 
-          {/* Specs Section */}
+          {/* Spec Bar */}
           <div
-            className={`mb-8 border-t border-white/10 pt-8 transition-all duration-500 delay-250 ${
+            className={`mb-8 border-t border-stroke-light pt-8 transition-all duration-500 delay-200 ${
               isVehicleChanging ? "translate-y-4 opacity-0" : "translate-y-0 opacity-100"
             }`}
           >
-            <div className="grid grid-cols-2 gap-6 lg:grid-cols-4">
+            <div className="flex flex-wrap gap-0">
               {/* 0-100 km/h */}
-              <div className="flex items-start gap-3">
-                <div className="rounded-lg bg-electric-blue/10 p-2.5">
-                  <Lightning className="h-4 w-4 text-electric-blue" />
+              <div className="flex flex-1 min-w-[140px] items-start gap-3 pr-6 border-r border-stroke-light last:border-r-0">
+                <div className="rounded-full bg-surface-pressed p-2.5">
+                  <Lightning className="h-4 w-4 text-accent-tech" />
                 </div>
                 <div>
-                  <p className="text-sm font-bold text-white">0 - 100 km/h</p>
-                  <p className="text-xs text-white/50">7.3 giây</p>
+                  <p className="text-sm font-semibold text-white">0 – 100 km/h</p>
+                  <p className="text-xs text-text-secondary">7.3 giây</p>
                 </div>
               </div>
 
               {/* Pin Blade Battery */}
-              <div className="flex items-start gap-3">
-                <div className="rounded-lg bg-electric-blue/10 p-2.5">
-                  <Battery className="h-4 w-4 text-electric-blue" />
+              <div className="flex flex-1 min-w-[140px] items-start gap-3 px-6 border-r border-stroke-light last:border-r-0">
+                <div className="rounded-full bg-surface-pressed p-2.5">
+                  <Battery className="h-4 w-4 text-accent-tech" />
                 </div>
                 <div>
-                  <p className="text-sm font-bold text-white">Pin Blade Battery</p>
-                  <p className="text-xs text-white/50">An toàn tuyệt đối</p>
+                  <p className="text-sm font-semibold text-white">Pin Blade Battery</p>
+                  <p className="text-xs text-text-secondary">An toàn tuyệt đối</p>
                 </div>
               </div>
 
               {/* Sạc nhanh DC */}
-              <div className="flex items-start gap-3">
-                <div className="rounded-lg bg-electric-blue/10 p-2.5">
-                  <Plug className="h-4 w-4 text-electric-blue" />
+              <div className="flex flex-1 min-w-[140px] items-start gap-3 px-6 border-r border-stroke-light last:border-r-0">
+                <div className="rounded-full bg-surface-pressed p-2.5">
+                  <Plug className="h-4 w-4 text-accent-tech" />
                 </div>
                 <div>
-                  <p className="text-sm font-bold text-white">Sạc nhanh DC</p>
-                  <p className="text-xs text-white/50">30% - 80% chi 30 phút</p>
+                  <p className="text-sm font-semibold text-white">Sạc nhanh DC</p>
+                  <p className="text-xs text-text-secondary">30% – 80% chỉ 30 phút</p>
                 </div>
               </div>
 
               {/* Bảo hành */}
-              <div className="flex items-start gap-3">
-                <div className="rounded-lg bg-electric-blue/10 p-2.5">
-                  <Shield className="h-4 w-4 text-electric-blue" />
+              <div className="flex flex-1 min-w-[140px] items-start gap-3 pl-6">
+                <div className="rounded-full bg-surface-pressed p-2.5">
+                  <Shield className="h-4 w-4 text-accent-tech" />
                 </div>
                 <div>
-                  <p className="text-sm font-bold text-white">Bảo hành</p>
-                  <p className="text-xs text-white/50">6 năm / 150.000 km</p>
+                  <p className="text-sm font-semibold text-white">Bảo hành</p>
+                  <p className="text-xs text-text-secondary">6 năm / 150.000 km</p>
                 </div>
               </div>
             </div>
@@ -224,29 +215,29 @@ export function HeroSection({ vehicle, colors, selectedColor, onColorChange }: H
 
           {/* 360 View Section */}
           <div
-            className={`mb-8 border-t border-white/10 pt-8 transition-all duration-500 delay-300 ${
+            className={`mb-8 border-t border-stroke-light pt-8 transition-all duration-500 delay-300 ${
               isVehicleChanging ? "translate-y-4 opacity-0" : "translate-y-0 opacity-100"
             }`}
           >
-            <div className="mb-6 flex items-center gap-2">
-              <Zap className="h-4 w-4 text-electric-blue" />
-              <h3 className="text-lg font-bold text-white">360°</h3>
+            <div className="mb-4 flex items-center gap-2">
+              <Zap className="h-4 w-4 text-accent-tech" />
+              <h3 className="text-lg font-semibold text-white">360°</h3>
             </div>
-            <p className="mb-4 text-sm text-white/60">Kéo để xoay xe</p>
+            <p className="mb-4 text-sm text-text-secondary">Kéo để xoay xe</p>
 
-            {/* Gallery Thumbnails */}
-            <div className="flex gap-3 overflow-x-auto pb-4">
+            {/* Gallery Strip */}
+            <div className="flex gap-3 overflow-x-auto pb-4 scrollbar-hide">
               {viewAngles.map((angle) => (
                 <button
                   key={angle.id}
                   onClick={() => setSelectedAngle(angle.id)}
                   className={`group relative flex-shrink-0 overflow-hidden rounded-lg transition-all duration-300 ${
                     selectedAngle === angle.id
-                      ? "ring-2 ring-electric-blue"
-                      : "ring-1 ring-white/10 hover:ring-white/30"
+                      ? "ring-2 ring-accent-tech bg-surface-pressed"
+                      : "ring-1 ring-stroke-light hover:ring-white/20"
                   }`}
                 >
-                  <div className="relative h-20 w-32 bg-white/5">
+                  <div className="relative h-20 w-32 bg-canvas">
                     <Image
                       src={angle.image}
                       alt={angle.label}
@@ -268,7 +259,7 @@ export function HeroSection({ vehicle, colors, selectedColor, onColorChange }: H
               isVehicleChanging ? "translate-y-4 opacity-0" : "translate-y-0 opacity-100"
             }`}
           >
-            <p className="mb-4 text-xs font-medium uppercase tracking-wider text-white/40">
+            <p className="mb-4 text-xs font-medium uppercase tracking-label text-text-secondary">
               Chọn màu xe
             </p>
             <div className="flex items-center gap-3">
@@ -276,35 +267,35 @@ export function HeroSection({ vehicle, colors, selectedColor, onColorChange }: H
                 <button
                   key={color.id}
                   onClick={() => onColorChange(color)}
-                  className={`group relative h-10 w-10 rounded-full transition-all duration-300 active:scale-90 ${
+                  className={`group relative flex h-10 w-10 items-center justify-center rounded-full transition-all duration-300 active:scale-[0.98] ${
                     selectedColor.id === color.id
-                      ? "scale-110 ring-2 ring-electric-blue ring-offset-4 ring-offset-black"
-                      : "hover:scale-125 hover:shadow-lg ring-1 ring-white/20"
+                      ? "ring-2 ring-accent-tech scale-110"
+                      : "ring-1 ring-stroke-light hover:scale-125"
                   }`}
                   style={{
                     backgroundColor: color.hex,
                     transitionDelay: `${index * 50}ms`,
-                    boxShadow: selectedColor.id === color.id ? `0 0 20px ${color.hex}40` : undefined
+                    boxShadow: selectedColor.id === color.id ? `0 0 20px ${color.hex}40` : undefined,
                   }}
                   title={color.name}
                 >
                   {selectedColor.id === color.id && (
-                    <span className="absolute inset-0 animate-ping rounded-full opacity-30" style={{ backgroundColor: color.hex }} />
+                    <span className="h-2.5 w-2.5 rounded-full bg-white ring-1 ring-white/50" />
                   )}
                 </button>
               ))}
             </div>
-            <div className="mt-4 flex items-center gap-1.5 text-xs text-white/40">
+            <div className="mt-4 flex items-center gap-1.5 text-xs text-text-secondary">
               <span>{colors.length} màu sắc</span>
-              <Star className="h-3 w-3 fill-current transition-transform duration-300 hover:scale-125 hover:text-yellow-500" />
+              <Star className="h-3 w-3 fill-current transition-transform duration-300 hover:scale-125 hover:text-status-warning" />
             </div>
           </div>
         </div>
 
         {/* Right - Car Image */}
         <div className="relative flex flex-1 items-center justify-center px-6 lg:px-0">
-          {/* Glow behind car */}
-          <div 
+          {/* Radial glow behind car */}
+          <div
             className={`absolute inset-0 transition-all duration-700 ${
               isImageLoading || isVehicleChanging ? "opacity-0" : "opacity-100"
             }`}
@@ -312,18 +303,18 @@ export function HeroSection({ vehicle, colors, selectedColor, onColorChange }: H
               background: `radial-gradient(ellipse at center, ${selectedColor.hex}15 0%, transparent 60%)`,
             }}
           />
-          <div 
+          <div
             className={`relative aspect-[4/3] w-full max-w-2xl transition-all duration-500 ${
               isImageLoading || isVehicleChanging
-                ? "scale-95 opacity-0 blur-sm" 
+                ? "scale-95 opacity-0 blur-sm"
                 : "scale-100 opacity-100 blur-0"
             }`}
           >
             <Image
               src={selectedColor.image}
-              alt={`BYD ${vehicle.name} - ${selectedColor.name}`}
+              alt={`BYD ${vehicle.name} – ${selectedColor.name}`}
               fill
-              className="object-contain drop-shadow-[0_20px_60px_rgba(0,0,0,0.5)]"
+              className="object-contain"
               priority
             />
           </div>
@@ -332,3 +323,4 @@ export function HeroSection({ vehicle, colors, selectedColor, onColorChange }: H
     </section>
   )
 }
+
