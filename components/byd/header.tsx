@@ -2,15 +2,7 @@
 
 import { Download } from "lucide-react"
 
-interface HeaderProps {
-  activeSection: string
-  onSectionChange: (section: string) => void
-}
-
-const navItems = [
-]
-
-export function Header({ activeSection, onSectionChange }: HeaderProps) {
+export function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 glass-nav">
       <div className="flex items-center justify-between px-6 py-4 lg:px-12">
@@ -20,31 +12,6 @@ export function Header({ activeSection, onSectionChange }: HeaderProps) {
             BYD
           </span>
         </div>
-
-        {/* Navigation */}
-        <nav className="hidden items-center gap-1 md:flex">
-          {navItems.map((item) => (
-            <button
-              key={item.id}
-              onClick={() => onSectionChange(item.id)}
-              className={`group relative px-4 py-2 text-sm font-medium transition-all duration-300 active:scale-95 ${
-                activeSection === item.id
-                  ? "text-white"
-                  : "text-white/50 hover:text-white/80"
-              }`}
-            >
-              {item.label}
-              {/* Active indicator with animation */}
-              <span 
-                className={`absolute bottom-0 left-4 right-4 h-0.5 rounded-full bg-electric-blue transition-all duration-300 origin-center ${
-                  activeSection === item.id 
-                    ? "scale-x-100 opacity-100 glow-blue" 
-                    : "scale-x-0 opacity-0 group-hover:scale-x-100 group-hover:opacity-50"
-                }`}
-              />
-            </button>
-          ))}
-        </nav>
 
         {/* Right Actions */}
         <div className="flex items-center gap-4">
